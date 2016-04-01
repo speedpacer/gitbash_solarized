@@ -11,6 +11,8 @@ Add or make changes to the following files/folders:</br>
 ~/.dir_colors</br>
 ~/.vim/colors/solarized.vim</br>
 
+If you clone this repo, make sure you do "ls -a" to see the hidden files.
+
 # Credits
 The solarized color scheme was designed by Ethan Schoonover. More info here:</br>
 http://ethanschoonover.com/solarized</br>
