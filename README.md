@@ -4,7 +4,14 @@ Solarized (dark) Git Bash and VIM
 This is how I solarize the Git Bash terminal and vim and change the font, prompt and title. 
 
 # Installation
-Add or make changes to the following files/folders:</br>
+
+`git clone https://github.com/speedpacer/gitbash_solarized`</br>
+`cd gitbash_solarized`</br>
+`./setup.sh`</br>
+
+<i>Note: existing files if any will be backed up.</i></br>
+
+Or manually add or make changes to the following files/folders:</br>
 ~/.bashrc</br>
 ~/.minttyrc</br>
 ~/.vimrc</br>
