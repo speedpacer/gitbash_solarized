@@ -1,12 +1,13 @@
 #!/bin/sh
 
 # back up existing files
-mv ~/.bashrc ~/.bashrc_bkp
-mv ~/.vimrc ~/.vimrc_bkp
-mv ~/.dir_colors ~/.dir_colors
+[ -f ~/.bashrc ] && mv ~/.bashrc ~/.bashrc_bkp
+[ -f ~/.vimrc ] && mv ~/.vimrc ~/.vimrc_bkp
+[ -f ~/.dir_colors ] && mv ~/.dir_colors ~/.dir_colors
+[ -f ~/.vim/colors/solarized.vim ] && mv ~/.vim/colors/solarized.vim ~/.vim/colors/solarized.bkp
 
 # create folder for vim colors
-mkdir -p ~/.vim/colors
+[ ! -d ~/.vim/colors ] && mkdir -p ~/.vim/colors
 
 # copy files
 cp .bashrc ~/.bashrc
