@@ -7,6 +7,8 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
 
+export SHELL=/bin/bash
+
 function get_hostname {
   export SHORTNAME=${HOSTNAME}
 }
