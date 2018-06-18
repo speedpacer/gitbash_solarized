@@ -1,5 +1,4 @@
 BoldAsFont=yes
-Term=xterm-256color
 BoldAsColour=yes
 Black=7,54,66
 Red=220,50,47
