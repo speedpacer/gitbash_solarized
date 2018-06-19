@@ -10,7 +10,7 @@ fi
 export SHELL=/bin/bash
 
 function get_hostname {
-  export SHORTNAME=${HOSTNAME}
+  export SHORTNAME=${HOSTNAME%%.*}
 }
 
 function user_color {
