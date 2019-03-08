@@ -21,7 +21,7 @@ function user_color {
   id | grep "Admin" > /dev/null
   RETVAL=$?
   if [[ $RETVAL == 0 ]]; then
-    usercolor="[0;32m";
+    usercolor="[0;31m";
   else
     usercolor="[0;32m";
   fi
@@ -40,9 +40,10 @@ eval `dircolors ~/.dir_colors`
 inputcolor='[0;37m'
 cwdcolor='[0;34m'
 host_name='[1;31m'
+branchcolor='[0;36m'
 user_color
 PROMPT_COMMAND='settitle; git_branch; get_hostname; history -a;'
-PS1='\n\[\e${cwdcolor}\][${PWD}]\[\e${inputcolor}\]${gitbranch}\n\[\e${usercolor}\][\u]\[\e${host_name}\][${SHORTNAME}]\[\e${inputcolor}\] $ '
+PS1='\n\[\e${cwdcolor}\][${PWD}]\[\e${branchcolor}\]${gitbranch}\n\[\e${usercolor}\][\u]\[\e${host_name}\][${SHORTNAME}]\[\e${inputcolor}\] $ '
 export PS1
 
 # Aliases
