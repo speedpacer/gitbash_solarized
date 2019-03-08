@@ -13,6 +13,10 @@ function get_hostname {
   export SHORTNAME=${HOSTNAME%%.*}
 }
 
+function git_branch() { 
+  gitbranch=$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'); 
+}
+
 function user_color {
   id | grep "Admin" > /dev/null
   RETVAL=$?
@@ -37,8 +41,9 @@ inputcolor='[0;37m'
 cwdcolor='[0;34m'
 host_name='[1;31m'
 user_color
-PROMPT_COMMAND='settitle; get_hostname; history -a;'
-export PS1='\n\[\e${cwdcolor}\][$PWD]\n\[\e${usercolor}\][\u]\[\e${host_name}\][${SHORTNAME}]\[\e${inputcolor}\] $ '
+PROMPT_COMMAND='settitle; git_branch; get_hostname; history -a;'
+PS1='\n\[\e${cwdcolor}\][${PWD}]\[\e${inputcolor}\]${gitbranch}\n\[\e${usercolor}\][\u]\[\e${host_name}\][${SHORTNAME}]\[\e${inputcolor}\] $ '
+export PS1
 
 # Aliases
 alias ls='ls -l --color'
