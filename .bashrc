@@ -8,6 +8,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 export SHELL=/bin/bash
+export TERM=xterm
 
 function get_hostname {
   export SHORTNAME=${HOSTNAME%%.*}
@@ -18,7 +19,7 @@ function git_branch() {
 }
 
 function user_color {
-  id | grep "Admin" > /dev/null
+  id | grep "root" > /dev/null
   RETVAL=$?
   if [[ $RETVAL == 0 ]]; then
     usercolor="[0;31m";
