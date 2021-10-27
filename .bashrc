@@ -10,7 +10,7 @@ fi
 export SHELL=/bin/bash
 export TERM=xterm
 
-function get_hostname {
+function get_hostname() {
   export SHORTNAME=${HOSTNAME%%.*}
 }
 
